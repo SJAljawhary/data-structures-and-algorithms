@@ -12,6 +12,8 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
+  let regex = /^(Mr.|Mrs.|Ms.|Dr.)\s\S/g;
+  return arr.filter(value => regex.test(value));
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,6 +26,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+
   const result = arr.map((word) => {
     return word.charAt(0).toUpperCase() + word.slice(1);
   });
@@ -106,7 +109,6 @@ let biggerThanLuke = (arr) => {
 
   return arr.filter(person => person.mass > 77).map(person => person.name).join(' - ');
 
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -134,7 +136,6 @@ const sortBy = (property, arr) => {
     }
   });
   return arr;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +153,7 @@ https:/missingslash.org returns false because the URL is malformed
 const isSecure = (url) => {
   // Solution code here...
 
-  
+  return /https:\/\//i.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,12 +177,12 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
-  board = board.join('-').replace(/,/g, '');
-  // console.log(board)
+
   if (/XXX|X...X...X|X....X....X|X..X..X/.test(board)) return true;
   if (/OOO|O...O...O|O....O....O|O..O..O/.test(board)) return true;
   if (/0/.test(board)) return false;
   return false;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
