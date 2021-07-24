@@ -26,8 +26,8 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  return starWarsArr.sort((a , b) => {
-    return b.height - a.height;
+  return starWarsArr.sort((a,b) => {
+   return b.height - a.height;
   })
 }
 
@@ -39,8 +39,11 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
-  arr.splice(idx , 3);
-  return arr;
+    arr.splice(idx,3);
+    return arr;
+
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +55,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 const joinArray = (arr) => {
   // Solution code here...
   return arr.join(' ');
-
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,8 +74,12 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+
+  // لييييييش 
+
   for (let i = 0; i < str.length + 1; i++) {
     result.push(str.slice(i));
+    
   }
   return result;
 };
@@ -87,6 +94,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+
   return arr.split('');
 };
 
@@ -135,14 +143,20 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  // recipe.ingredients.forEach(value => {
+  //   result.push(value.pop());
+    
+  // });
   recipe.ingredients.forEach(value => {
     
-let value1 = value.slice(value.indexOf(' ') + 1); 
-let value2 = value1.slice(value1.indexOf(' ') + 1);
-    result.push(value2);
-  })
+    let value1 = value.slice(value.indexOf(' ') + 1); 
+    let value2 = value1.slice(value1.indexOf(' ') + 1);
+        result.push(value2);
+      })
   return result;
 };
+// ما فهمتهااااااااااااااااااااااااا :(
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
@@ -154,7 +168,11 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
-  
+  // recipe.ingredients.forEach(value => {
+  //   result.push(value.split('').pop());
+    
+  // });
+
   return result;
 };
 
@@ -189,6 +207,14 @@ For example:
 
 const removeEvenValues = (arr) => {
   // Solution code here...
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] % 2 === 0){
+      arr.splice(i,1);
+      
+    }
+    
+  }
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -305,7 +331,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
